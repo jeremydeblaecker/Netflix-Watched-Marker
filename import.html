@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Importer les contenus déjà vus — Netflix</title>
+  <link rel="stylesheet" href="import.css" />
+</head>
+<body data-platform="netflix">
+  <main class="card">
+    <header><img src="icons/icon48.png" alt=""><div><h1>Importer les contenus déjà vus</h1><p>Netflix Watched Marker</p></div></header>
+    <p class="help">Sélectionnez le JSON de migration correspondant au site. Les données sont fusionnées avec l’historique existant, sans suppression.</p>
+    <button id="chooseFile" class="primary">Choisir un fichier JSON</button>
+    <input id="fileInput" type="file" accept="application/json,.json" hidden>
+    <div id="status" class="status" aria-live="polite">Aucun fichier sélectionné.</div>
+    <section id="details" class="details" hidden>
+      <div><strong id="readCount">0</strong><span>éléments lus</span></div>
+      <div><strong id="addedCount">0</strong><span>ajoutés</span></div>
+      <div><strong id="updatedCount">0</strong><span>mis à jour</span></div>
+      <div><strong id="storedCount">0</strong><span>total sauvegardé</span></div>
+    </section>
+    <p class="note">Après l’import, rechargez la page Netflix avec <kbd>Ctrl</kbd> + <kbd>F5</kbd>.</p>
+  </main>
+  <script src="import.js"></script>
+</body>
+</html>

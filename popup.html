@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Netflix Watched Marker</title>
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <header class="header">
+    <img src="icons/icon32.png" alt="" />
+    <div>
+      <h1>Netflix Watched Marker</h1>
+      <p class="subtitle">Marquage automatique des programmes vus</p>
+    </div>
+  </header>
+  <main>
+    <section class="stat-block">
+      <div class="stat"><span id="watchedCount">0</span><label>vus</label></div>
+      <div class="stat"><span id="inProgressCount">0</span><label>en cours</label></div>
+    </section>
+    <section class="setting-row"><label class="switch"><input type="checkbox" id="toggleEnabled" /><span class="slider"></span></label><span>Activer le marquage</span></section>
+    <section class="setting-row"><label class="switch"><input type="checkbox" id="toggleProgressBar" /><span class="slider"></span></label><span>Afficher la barre de progression</span></section>
+    <section class="setting-row"><label class="switch"><input type="checkbox" id="toggleHideWatched" /><span class="slider"></span></label><span>Masquer les contenus déjà vus</span></section>
+    <section class="setting-row threshold-row"><span>Seuil « vu »</span><input type="range" id="thresholdRange" min="50" max="99" step="1" /><span id="thresholdValue">90%</span></section>
+    <section class="backup-block site-import-block">
+      <button id="openSiteImport" class="secondary-btn">Importer les contenus déjà vus</button>
+      <p class="backup-status">Compatible avec le JSON de migration fourni pour ce site.</p>
+    </section>
+    <button id="clearHistory" class="danger-btn">Effacer tout l’historique</button>
+    <details class="debug-block">
+      <summary>Outils de test</summary>
+      <p class="debug-text">Marque la fiche Netflix actuellement ouverte comme vue.</p>
+      <button id="markCurrentWatched" class="secondary-btn">Marquer l’onglet actif comme « vu »</button>
+    </details>
+
+    <section class="migration-block">
+      <h2>Migration vers l’extension unifiée</h2>
+      <p>Exporte les données de cette extension dans un fichier compatible avec Streaming Watched Manager.</p>
+      <button id="exportForSwm" class="secondary-btn">Exporter vers Streaming Watched Manager</button>
+      <p id="migrationStatus" class="backup-status" aria-live="polite"></p>
+    </section>
+  </main>
+  <footer><p>Non affilié à Amazon ou Netflix. Les données restent stockées localement.</p></footer>
+  <script src="popup.js"></script>
+</body>
+</html>
